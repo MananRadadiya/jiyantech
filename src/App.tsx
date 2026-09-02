@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   ArrowDownRight,
   ArrowRight,
@@ -6,7 +6,21 @@ import {
   MoveUpRight,
   X,
 } from 'lucide-react';
+import About from './pages/About';
 import './index.css';
+
+function useHashRoute() {
+  const [route, setRoute] = useState(window.location.hash);
+  useEffect(() => {
+    const onChange = () => {
+      setRoute(window.location.hash);
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener('hashchange', onChange);
+    return () => window.removeEventListener('hashchange', onChange);
+  }, []);
+  return route;
+}
 
 type Service = {
   number: string;
@@ -74,7 +88,7 @@ function Navbar() {
           <a href="#services" onClick={close}>Services</a>
           <a href="#approach" onClick={close}>Approach</a>
           <a href="#work" onClick={close}>Work</a>
-          <a href="#about" onClick={close}>About</a>
+          <a href="#/about" onClick={close}>About</a>
           <a className="mobile-cta" href="#contact" onClick={close}>Start a project <ArrowUpRight size={15} /></a>
         </nav>
         <a className="nav-cta" href="#contact">Start a project <ArrowUpRight size={15} /></a>
@@ -192,6 +206,8 @@ function Footer() {
 }
 
 function App() {
+  const route = useHashRoute();
+  if (route === '#/about') return <About />;
   return <div className="app-shell"><Navbar /><main><Hero /><Services /><Approach /><Work /><About /></main><Footer /></div>;
 }
 
