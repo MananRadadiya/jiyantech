@@ -1,0 +1,178 @@
+<%- include('partials/head', { title: 'Case Studies & Production Work' }) %>
+<%- include('partials/navbar') %>
+
+<main class="flex-1 pt-24 pb-20">
+  <!-- Hero with Live Dynamic WorkVisual -->
+  <section class="relative py-16 md:py-24 px-6 lg:px-12 bg-gradient-to-b from-slate-50 via-white to-white border-b border-slate-200/80 overflow-hidden">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="mb-8">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 hover:text-brand-500 transition-colors group"
+        >
+          <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
+          <span>Back to Overview</span>
+        </a>
+      </div>
+
+      <div class="max-w-2xl">
+        <p class="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-brand-500 mb-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-500 ring-4 ring-brand-500/15"></span>
+          Portfolio & Impact
+        </p>
+        <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
+          Engineered for impact,<br />
+          <span class="text-brand-500 font-normal">built for resilience.</span>
+        </h1>
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl">
+          A curated selection of production software platforms, high-throughput APIs, and modern user interfaces we’ve delivered for our partners.
+        </p>
+      </div>
+    </div>
+
+    <!-- Dynamic 3D/HUD Visual on right -->
+    <%- include('partials/visuals/work-visual') %>
+  </section>
+
+  <!-- Filter Pills with Counters -->
+  <section class="py-6 px-6 lg:px-12 bg-white border-b border-slate-200 sticky top-[72px] z-20 backdrop-blur-md bg-white/90">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center gap-2">
+      <button
+        type="button"
+        class="work-filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 bg-brand-500 text-white shadow-md shadow-brand-500/25 scale-[1.02]"
+        data-filter="all"
+      >
+        <span>All Case Studies</span>
+        <span class="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-white/20 text-white"><%= allProjects.length %></span>
+      </button>
+
+      <button
+        type="button"
+        class="work-filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 bg-slate-100 text-slate-600 hover:bg-slate-200/80 hover:text-slate-900"
+        data-filter="Product Engineering"
+      >
+        <span>Product Engineering</span>
+        <span class="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-slate-200 text-slate-600">1</span>
+      </button>
+
+      <button
+        type="button"
+        class="work-filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 bg-slate-100 text-slate-600 hover:bg-slate-200/80 hover:text-slate-900"
+        data-filter="Platform Architecture"
+      >
+        <span>Platform Architecture</span>
+        <span class="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-slate-200 text-slate-600">1</span>
+      </button>
+
+      <button
+        type="button"
+        class="work-filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 bg-slate-100 text-slate-600 hover:bg-slate-200/80 hover:text-slate-900"
+        data-filter="SaaS Platform"
+      >
+        <span>SaaS Platforms</span>
+        <span class="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-slate-200 text-slate-600">1</span>
+      </button>
+
+      <button
+        type="button"
+        class="work-filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 bg-slate-100 text-slate-600 hover:bg-slate-200/80 hover:text-slate-900"
+        data-filter="Mobile Applications"
+      >
+        <span>Mobile Apps</span>
+        <span class="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-slate-200 text-slate-600">1</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Work Grid -->
+  <section class="py-16 px-6 lg:px-12 bg-slate-50/60 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+      <% allProjects.forEach(function(project) { %>
+        <article
+          class="project-card relative p-8 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 overflow-hidden"
+          data-category="<%= project.category %>"
+        >
+          <!-- Glowing top line highlight on hover -->
+          <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-brand-500 via-cyan-400 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-brand-600 font-mono bg-brand-50 px-2.5 py-1 rounded-md border border-brand-200/50">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+                <%= project.category %>
+              </span>
+              <a
+                href="/contact"
+                class="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 group-hover:bg-brand-500 group-hover:text-white group-hover:rotate-45 transition-all duration-300 shadow-xs"
+                aria-label="Discuss project"
+              >
+                <i data-lucide="move-up-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">
+              <%= project.title %>
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              <%= project.description %>
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-6">
+              <% if (project.growth) { %>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 border border-emerald-200/80 rounded-lg text-xs text-emerald-800 font-medium">
+                  <i data-lucide="trending-up" class="w-3.5 h-3.5 text-emerald-600"></i>
+                  <span>Growth: <strong><%= project.growth %></strong></span>
+                </div>
+              <% } %>
+
+              <% if (project.metric) { %>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 border border-blue-200/80 rounded-lg text-xs text-brand-800 font-medium">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-600"></i>
+                  <span><%= project.metric %></span>
+                </div>
+              <% } %>
+            </div>
+          </div>
+
+          <div class="pt-6 border-t border-slate-100 flex flex-wrap gap-1.5">
+            <% project.tags.forEach(function(t) { %>
+              <span class="text-[11px] font-mono text-slate-600 bg-slate-100/90 group-hover:bg-slate-100 px-2.5 py-1 rounded transition-colors">
+                <%= t %>
+              </span>
+            <% }); %>
+          </div>
+        </article>
+      <% }); %>
+    </div>
+  </section>
+
+  <!-- NDA Protected Notice -->
+  <section class="py-16 px-6 lg:px-12 bg-white">
+    <div class="max-w-7xl mx-auto p-8 sm:p-12 rounded-2xl bg-slate-900 text-white flex flex-col md:flex-row justify-between items-start md:items-center gap-8 shadow-xl relative overflow-hidden">
+      <div class="absolute -right-12 -bottom-12 w-64 h-64 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="max-w-xl relative z-10">
+        <p class="text-[10px] uppercase font-mono tracking-widest text-brand-400 font-bold mb-2 flex items-center gap-1.5">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+          Confidentiality & Trust
+        </p>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">
+          We prioritize client success over self-promotion.
+        </h2>
+        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+          Due to strict NDAs, proprietary client names are protected. We are happy to walk through deep-dive technical architecture reviews on a private call.
+        </p>
+      </div>
+
+      <a
+        href="/contact"
+        class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-bold px-6 py-3.5 rounded-md text-xs tracking-tight transition-all duration-200 shadow-brand shrink-0 relative z-10 hover:-translate-y-0.5"
+      >
+        <span>Request Private Walkthrough</span>
+        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>

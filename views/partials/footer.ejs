@@ -1,0 +1,120 @@
+<footer class="bg-[#071224] text-white overflow-hidden relative mt-auto" id="contact">
+  <!-- Top CTA Banner -->
+  <div class="relative py-24 md:py-32 px-6 lg:px-12 border-b border-white/10 bg-[radial-gradient(circle_at_80%_40%,rgba(29,111,232,0.25),transparent_35%)]">
+    <div class="max-w-4xl mx-auto text-center md:text-left">
+      <p class="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-brand-300 mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-400 ring-4 ring-brand-400/20"></span>
+        Start a conversation
+      </p>
+      <h2 class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+        Have something<br />
+        <span class="text-brand-400 font-normal">worth building?</span>
+      </h2>
+      <p class="text-slate-400 text-sm md:text-base max-w-xl leading-relaxed mb-10">
+        We partner with ambitious teams to architect, design, and engineer category-defining digital products.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center md:justify-start gap-4">
+        <a
+          class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-slate-900 font-bold px-6 py-3.5 rounded-md text-xs tracking-tight transition-all duration-200 shadow-md hover:-translate-y-0.5"
+          href="/contact"
+        >
+          <span>Let’s talk</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </a>
+
+        <button
+          type="button"
+          id="copy-email-btn"
+          class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white border border-white/15 backdrop-blur-md px-5 py-3.5 rounded-md text-xs font-semibold transition-all duration-200 hover:-translate-y-0.5 cursor-pointer"
+        >
+          <span id="copy-email-icon"><i data-lucide="mail" class="w-4 h-4 text-brand-300"></i></span>
+          <span id="copy-email-text">hello@jiyantech.com</span>
+          <i data-lucide="copy" class="w-3.5 h-3.5 text-slate-400 ml-1"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Footer Links -->
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 pb-12 border-b border-white/10">
+      <!-- Brand Info -->
+      <div>
+        <%- include('logo', { light: true, className: 'mb-4' }) %>
+        <p class="text-slate-400 text-xs leading-relaxed max-w-sm mt-3">
+          Digital products, engineered for what comes next. High-performance software architectures for scaling enterprises.
+        </p>
+        <div class="mt-4 flex items-center gap-2 text-[11px] uppercase tracking-wider text-slate-500 font-mono">
+          <span>Hyderabad, India</span>
+          <span>·</span>
+          <span>Working Worldwide</span>
+        </div>
+      </div>
+
+      <!-- Links Grid -->
+      <div class="grid grid-cols-3 gap-8">
+        <div class="flex flex-col gap-3">
+          <span class="text-[11px] font-bold uppercase tracking-widest text-slate-400 font-mono mb-1">
+            Explore
+          </span>
+          <% footerLinks.explore.forEach(function(link) { %>
+            <a
+              href="<%= link.href %>"
+              class="text-xs text-slate-300 hover:text-brand-400 transition-colors duration-150"
+            >
+              <%= link.label %>
+            </a>
+          <% }); %>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <span class="text-[11px] font-bold uppercase tracking-widest text-slate-400 font-mono mb-1">
+            Connect
+          </span>
+          <% footerLinks.connect.forEach(function(link) { %>
+            <a
+              href="<%= link.href %>"
+              class="text-xs text-slate-300 hover:text-brand-400 transition-colors duration-150"
+            >
+              <%= link.label %>
+            </a>
+          <% }); %>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <span class="text-[11px] font-bold uppercase tracking-widest text-slate-400 font-mono mb-1">
+            Social
+          </span>
+          <% footerLinks.socials.forEach(function(link) { %>
+            <a
+              href="<%= link.href %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs text-slate-300 hover:text-brand-400 transition-colors duration-150"
+            >
+              <%= link.label %>
+            </a>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legal Row -->
+    <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+      <span>© <%= new Date().getFullYear() %> JiyanTech. All rights reserved.</span>
+      <span>Independent Technology Partner</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+</script>
+<script src="/js/hero-sphere.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<header
+  id="main-navbar"
+  class="fixed top-0 left-0 right-0 z-50 h-[72px] transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-slate-200/50"
+>
+  <div class="max-w-7xl mx-auto h-full px-6 lg:px-12 flex items-center justify-between">
+    <%- include('logo', { light: false }) %>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
+      <% navLinks.forEach(function(link) { 
+           var isActive = (currentPath === link.href);
+      %>
+        <a
+          href="<%= link.href %>"
+          class="text-xs font-semibold tracking-wide transition-colors duration-150 relative py-1 <%= isActive ? 'text-brand-500 font-bold' : 'text-slate-600 hover:text-brand-500' %>"
+        >
+          <%= link.label %>
+          <% if (isActive) { %>
+            <span class="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-500 rounded-full"></span>
+          <% } %>
+        </a>
+      <% }); %>
+    </nav>
+
+    <!-- Action Button & Mobile Toggle -->
+    <div class="flex items-center gap-3">
+      <a
+        class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold text-slate-800 bg-white hover:bg-brand-500 hover:text-white border border-slate-200 hover:border-brand-500 px-4 py-2 rounded-md transition-all duration-200 shadow-sm hover:shadow-brand"
+        href="/contact"
+      >
+        <span>Start a project</span>
+        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+      </a>
+
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 text-slate-700 hover:text-brand-500 focus:outline-none cursor-pointer"
+        type="button"
+        aria-label="Toggle navigation menu"
+      >
+        <i data-lucide="menu" id="menu-icon" class="w-5 h-5"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Nav Drawer -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden fixed top-[72px] left-0 right-0 bg-white/98 backdrop-blur-xl border-b border-slate-200 shadow-xl px-6 py-6 flex flex-col gap-3"
+  >
+    <% navLinks.forEach(function(link) { %>
+      <a
+        href="<%= link.href %>"
+        class="mobile-nav-link py-2.5 text-sm font-semibold text-slate-700 hover:text-brand-500 border-b border-slate-100 flex items-center justify-between"
+      >
+        <span><%= link.label %></span>
+        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-slate-400"></i>
+      </a>
+    <% }); %>
+    <a
+      href="/contact"
+      class="mobile-nav-link mt-2 w-full py-3 bg-brand-500 text-white rounded-md text-xs font-bold flex items-center justify-center gap-2 shadow-brand"
+    >
+      <span>Start a project</span>
+      <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+    </a>
+  </div>
+</header>

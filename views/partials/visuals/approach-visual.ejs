@@ -1,0 +1,68 @@
+<div
+  class="hidden lg:block absolute w-[40vw] max-w-[560px] aspect-square right-2 top-1/2 -translate-y-1/2 opacity-95 pointer-events-none select-none"
+  aria-hidden="true"
+>
+  <!-- Cyan/Blue Aura Glow -->
+  <div class="absolute inset-[18%] rounded-full bg-cyan-500/15 blur-3xl anim-pulse-ring"></div>
+
+  <!-- Gyroscope Outer Ring 1 -->
+  <div class="absolute inset-6 rounded-full border-2 border-slate-200 border-dashed anim-spin-3d"></div>
+
+  <!-- Gyroscope Middle Ring 2 (Tilted) -->
+  <div class="absolute inset-14 rounded-full border border-brand-400/40 anim-spin-reverse-3d"></div>
+
+  <!-- Gyroscope Inner Ring 3 with Tick Marks -->
+  <div class="absolute inset-24 rounded-full border border-brand-500/30 anim-spin-3d"></div>
+
+  <!-- Central Diamond Crystal Geometry -->
+  <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 anim-float">
+    <!-- Diamond Outer Frame -->
+    <div class="absolute inset-4 rotate-45 border-2 border-brand-500/50 bg-white/80 rounded-xl shadow-lg backdrop-blur-md flex items-center justify-center">
+      <!-- Inner Inverted Diamond -->
+      <div class="w-24 h-24 rotate-45 border border-cyan-400/60 bg-blue-50/60 rounded-lg flex items-center justify-center">
+        <!-- Center Quantum Dot -->
+        <div class="w-6 h-6 rounded-full bg-brand-500 flex items-center justify-center shadow-[0_0_20px_rgba(29,111,232,0.8)]">
+          <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dynamic Precision Nodes -->
+    <div class="absolute -top-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-cyan-500 rounded-full ring-4 ring-cyan-500/20"></div>
+    <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-cyan-500 rounded-full ring-4 ring-cyan-500/20"></div>
+    <div class="absolute top-1/2 -left-1 -translate-y-1/2 w-3 h-3 bg-brand-500 rounded-full ring-4 ring-brand-500/20"></div>
+    <div class="absolute top-1/2 -right-1 -translate-y-1/2 w-3 h-3 bg-brand-500 rounded-full ring-4 ring-brand-500/20"></div>
+  </div>
+
+  <!-- SVG Precision Compass Reticle & Coordinates -->
+  <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 400">
+    <line x1="200" y1="20" x2="200" y2="380" stroke="#cbd5e1" strokeWidth="1" strokeDasharray="4 4"></line>
+    <line x1="20" y1="200" x2="380" y2="200" stroke="#cbd5e1" strokeWidth="1" strokeDasharray="4 4"></line>
+    <circle cx="200" cy="200" r="160" fill="none" stroke="#93c5fd" strokeWidth="1" class="anim-dash-flow opacity-40"></circle>
+  </svg>
+
+  <!-- Degree Markers -->
+  <span class="absolute top-3 left-1/2 -translate-x-1/2 text-[9px] font-mono text-slate-400 font-bold">
+    000° [TRUE NORTH]
+  </span>
+  <span class="absolute bottom-3 left-1/2 -translate-x-1/2 text-[9px] font-mono text-slate-400 font-bold">
+    180° [ALIGNMENT]
+  </span>
+  <span class="absolute top-1/2 right-3 -translate-y-1/2 text-[9px] font-mono text-slate-400 font-bold">
+    090° [RIGOR]
+  </span>
+  <span class="absolute top-1/2 left-3 -translate-y-1/2 text-[9px] font-mono text-slate-400 font-bold">
+    270° [CLARITY]
+  </span>
+
+  <!-- Telemetry Floating Chips -->
+  <div class="absolute top-[22%] left-[12%] px-2.5 py-1 rounded-full bg-white/90 border border-slate-200 shadow-sm text-[9px] font-mono text-brand-600 flex items-center gap-1.5 backdrop-blur-sm">
+    <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+    <span>PRECISION: 0.001</span>
+  </div>
+
+  <div class="absolute bottom-[22%] right-[10%] px-2.5 py-1 rounded-full bg-white/90 border border-brand-200 shadow-sm text-[9px] font-mono text-cyan-700 flex items-center gap-1.5 backdrop-blur-sm">
+    <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse"></span>
+    <span>DISCIPLINE: 100%</span>
+  </div>
+</div>

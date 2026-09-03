@@ -1,0 +1,62 @@
+<section class="relative py-24 md:py-32 px-6 lg:px-12 bg-[#071224] text-white overflow-hidden" id="approach">
+  <!-- Background Ambience -->
+  <div
+    class="absolute inset-0 z-0 opacity-40 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:64px_64px]"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_82%_28%,rgba(29,111,232,0.22),transparent_30%),radial-gradient(circle_at_20%_80%,rgba(6,182,212,0.12),transparent_30%)]"
+    aria-hidden="true"
+  ></div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    <!-- Section Heading -->
+    <div class="max-w-3xl mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/15 rounded-full text-[10px] font-bold uppercase tracking-wider text-brand-300 mb-4">
+        <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+        <span>How We Think</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
+        Good technology is<br />
+        <span class="text-brand-400 font-normal">felt, not announced.</span>
+      </h2>
+      <p class="text-slate-400 text-sm md:text-base leading-relaxed max-w-xl">
+        Strong digital products start with a sharp understanding of the core problem, not a rush to arbitrary frameworks.
+      </p>
+    </div>
+
+    <!-- Principles Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-white/10">
+      <% principlesData.forEach(function(principle) { %>
+        <div
+          class="p-8 rounded-xl bg-white/[0.03] border border-white/10 hover:border-brand-400/40 hover:bg-white/[0.06] transition-all duration-300 group hover:-translate-y-1"
+        >
+          <div class="flex justify-between items-center mb-8">
+            <span class="font-mono text-sm font-bold text-brand-400">
+              <%= principle.number %>
+            </span>
+            <span class="text-[10px] uppercase tracking-widest text-slate-400 font-mono">
+              <%= principle.detail %>
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-300 transition-colors">
+            <%= principle.title %>
+          </h3>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+            <%= principle.description %>
+          </p>
+        </div>
+      <% }); %>
+    </div>
+
+    <div class="mt-12 text-center md:text-left">
+      <a
+        href="/approach"
+        class="inline-flex items-center gap-2 text-xs font-bold text-brand-300 hover:text-brand-200 transition-colors"
+      >
+        <span>Learn more about our engineering standards</span>
+        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+  </div>
+</section>

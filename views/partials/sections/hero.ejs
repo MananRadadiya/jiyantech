@@ -1,0 +1,131 @@
+<section
+  id="hero-section"
+  class="relative min-h-screen w-full overflow-hidden"
+  aria-label="Hero"
+>
+  <!-- Background Elements -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <!-- Base gradient — light, airy -->
+    <div class="absolute inset-0 bg-gradient-to-b from-white via-slate-50 to-white"></div>
+
+    <!-- Subtle radial glow — electric blue accent -->
+    <div
+      class="absolute top-1/2 right-[15%] h-[600px] w-[600px] -translate-y-1/2 rounded-full opacity-30 blur-[120px]"
+      style="background: radial-gradient(circle, rgba(29,111,232,0.15) 0%, transparent 70%);"
+    ></div>
+
+    <!-- Faint grid pattern -->
+    <div
+      class="absolute inset-0 opacity-[0.03]"
+      style="background-image: linear-gradient(rgba(10,25,47,1) 1px, transparent 1px), linear-gradient(90deg, rgba(10,25,47,1) 1px, transparent 1px); background-size: 64px 64px;"
+    ></div>
+
+    <!-- Soft top fade -->
+    <div class="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white to-transparent"></div>
+
+    <!-- Soft bottom fade for smooth section transition -->
+    <div class="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-b from-transparent to-white"></div>
+  </div>
+
+  <!-- Content grid: left text, right 3D visual -->
+  <div class="relative z-10 grid min-h-screen grid-cols-1 lg:grid-cols-2">
+    <!-- Left — text content -->
+    <div class="relative flex h-full min-h-screen items-center order-2 lg:order-1 pt-24 lg:pt-0">
+      <div class="relative z-10 flex flex-col justify-center h-full max-w-2xl px-6 sm:px-8 lg:px-12 xl:px-16">
+        <!-- Eyebrow -->
+        <div
+          class="animate-fade-up flex items-center gap-2.5 mb-6"
+          style="animation-delay: 0.3s;"
+        >
+          <span class="relative flex h-2 w-2">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-jy-electric opacity-75 pulse-dot"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-jy-electric"></span>
+          </span>
+          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-jy-slate">
+            JiyanTech
+          </span>
+          <span class="h-px w-8 bg-jy-soft-gray/40"></span>
+          <span class="text-xs font-medium uppercase tracking-[0.15em] text-jy-soft-gray">
+            Digital Engineering
+          </span>
+        </div>
+
+        <!-- Headline -->
+        <h1
+          class="animate-fade-up font-display text-balance text-jy-navy leading-[1.05] mb-6 font-extrabold tracking-tight"
+          style="animation-delay: 0.5s; font-size: clamp(2.5rem, 6vw, 4.75rem);"
+        >
+          Technology<br />
+          without <span class="hero-gradient-text">boundaries.</span>
+        </h1>
+
+        <!-- Description -->
+        <p
+          class="animate-fade-up text-balance text-jy-slate/80 text-lg sm:text-xl leading-relaxed mb-10 max-w-lg"
+          style="animation-delay: 0.8s;"
+        >
+          We build intelligent digital solutions that connect systems, data, and
+          people — engineering the infrastructure for what comes next.
+        </p>
+
+        <!-- CTAs -->
+        <div
+          class="animate-fade-up flex flex-col sm:flex-row items-start sm:items-center gap-4"
+          style="animation-delay: 1.0s;"
+        >
+          <a
+            href="#services"
+            class="group inline-flex items-center gap-2 rounded-xl bg-jy-navy px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-jy-navy/20 transition-all duration-300 hover:bg-jy-deep-blue hover:shadow-xl hover:shadow-jy-electric/25 hover:-translate-y-0.5"
+          >
+            <span>Explore solutions</span>
+            <i data-lucide="arrow-right" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"></i>
+          </a>
+          <a
+            href="/contact"
+            class="group inline-flex items-center gap-2 rounded-xl border border-jy-slate/15 bg-white/60 px-7 py-3.5 text-sm font-semibold text-jy-navy backdrop-blur-sm transition-all duration-300 hover:border-jy-slate/30 hover:bg-white hover:-translate-y-0.5"
+          >
+            <i data-lucide="message-circle" class="h-4 w-4 text-jy-electric"></i>
+            <span>Talk to us</span>
+          </a>
+        </div>
+
+        <!-- Floating technical annotation -->
+        <div
+          class="animate-fade-in mt-12 hidden lg:flex items-center gap-2"
+          style="animation-delay: 2.0s;"
+        >
+          <span class="relative flex h-1.5 w-1.5">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-jy-cyan opacity-60 pulse-dot"></span>
+            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-jy-cyan"></span>
+          </span>
+          <span class="text-[11px] font-medium uppercase tracking-[0.18em] text-jy-soft-gray font-mono">
+            Digital Network Active
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right — 3D digital network sphere -->
+    <div class="relative h-[50vh] sm:h-[60vh] lg:h-screen lg:min-h-screen order-1 lg:order-2">
+      <div
+        id="hero-webgl-container"
+        class="absolute inset-0 flex items-center justify-center"
+        aria-hidden="true"
+      >
+        <canvas
+          id="hero-sphere-canvas"
+          class="h-full w-full cursor-grab active:cursor-grabbing"
+        ></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden lg:flex flex-col items-center gap-2 animate-fade-in"
+    style="animation-delay: 2.5s;"
+  >
+    <span class="text-[10px] font-medium uppercase tracking-[0.2em] text-jy-soft-gray font-mono">Scroll</span>
+    <div class="h-10 w-px bg-gradient-to-b from-jy-soft-gray/40 to-transparent"></div>
+  </div>
+</section>

@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-[#090d16] font-sans antialiased overflow-x-hidden;
+  }
+  ::selection {
+    @apply bg-brand-100 text-brand-900;
+  }
+}
+
+/* --- Reveal on scroll --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Slow spin (one ring) --- */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.anim-spin-slow {
+  animation: spin-slow 40s linear infinite;
+  will-change: transform;
+}
+
+/* --- Floating (subtle Y bob) --- */
+@keyframes float {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+  50%      { transform: translate(-50%, -50%) translateY(-10px); }
+}
+.anim-float {
+  animation: float 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* --- Pulsing dot --- */
+@keyframes dot-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.5); opacity: 0.4; }
+}
+.anim-dot-pulse {
+  animation: dot-pulse 2.5s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* --- Hover lift --- */
+.hover-lift {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* --- Grid background --- */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* --- Dot grid --- */
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* 3D Visual Keyframe Animations (Hardware-accelerated, lightweight, 60fps) */
+@keyframes spin3D {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin3DReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-10px) rotate(1deg);
+  }
+}
+
+@keyframes pulseGlowRing {
+  0%, 100% {
+    transform: scale(0.95);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.75;
+  }
+}
+
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+@keyframes beaconRadar {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes chartDraw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes signalPulse {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scaleY(0.7);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scaleY(1.1);
+  }
+}
+
+/* Neural Network & SVG Morph Animations for AboutVisual */
+@keyframes breatheAnim {
+  0%, 100% { transform: scale(0.96); opacity: 0.4; }
+  50% { transform: scale(1.08); opacity: 0.85; }
+}
+
+@keyframes coreRotateAnim {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes coreRotateRevAnim {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes scanLineAnim {
+  0% { top: 10%; opacity: 0; }
+  20% { opacity: 0.8; }
+  80% { opacity: 0.8; }
+  100% { top: 90%; opacity: 0; }
+}
+
+@keyframes nodePulseAnim {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+}
+
+@keyframes morphCoreAnim {
+  0%, 100% { transform: translate(-50%, -50%) rotate(45deg) scale(1); border-radius: 12px; }
+  50% { transform: translate(-50%, -50%) rotate(135deg) scale(1.08); border-radius: 24px; }
+}
+
+@keyframes drift1Anim {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-6px) translateX(3px); }
+}
+
+@keyframes drift2Anim {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(5px) translateX(-4px); }
+}
+
+@keyframes drift3Anim {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-4px) translateX(-3px); }
+}
+
+@keyframes drift4Anim {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(6px) translateX(4px); }
+}
+
+/* Helper Animation Utility Classes */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.anim-spin-3d {
+  animation: spin3D 28s linear infinite;
+}
+
+.anim-spin-reverse-3d {
+  animation: spin3DReverse 34s linear infinite;
+}
+
+.anim-pulse-ring {
+  animation: pulseGlowRing 4s ease-in-out infinite;
+}
+
+.anim-dash-flow {
+  stroke-dasharray: 6 6;
+  animation: dashFlow 3s linear infinite;
+}
+
+.anim-beacon {
+  animation: beaconRadar 2.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.chart-path-anim {
+  stroke-dasharray: 1000;
+  animation: chartDraw 2.2s ease-out both;
+}
+
+.signal-bar {
+  animation: signalPulse 2.5s ease-in-out infinite alternate;
+}
+
+.animate-breathe {
+  animation: breatheAnim 4s ease-in-out infinite;
+}
+
+.animate-core-rotate {
+  animation: coreRotateAnim 30s linear infinite;
+}
+
+.animate-core-rotate-rev {
+  animation: coreRotateRevAnim 24s linear infinite;
+}
+
+.animate-scan-line {
+  position: absolute;
+  animation: scanLineAnim 5s ease-in-out infinite;
+}
+
+.animate-node-pulse {
+  animation: nodePulseAnim 2.5s ease-in-out infinite;
+}
+
+.animate-node-pulse-delay {
+  animation: nodePulseAnim 2.5s ease-in-out infinite 0.8s;
+}
+
+.animate-node-pulse-delay-2 {
+  animation: nodePulseAnim 2.5s ease-in-out infinite 1.6s;
+}
+
+.animate-morph-core {
+  animation: morphCoreAnim 8s ease-in-out infinite;
+}
+
+.animate-drift-1 {
+  animation: drift1Anim 4s ease-in-out infinite;
+}
+
+.animate-drift-2 {
+  animation: drift2Anim 5s ease-in-out infinite 1s;
+}
+
+.animate-drift-3 {
+  animation: drift3Anim 4.5s ease-in-out infinite 0.5s;
+}
+
+.animate-drift-4 {
+  animation: drift4Anim 6s ease-in-out infinite 1.5s;
+}
+
+/* --- Hero Specific Styles --- */
+.hero-gradient-text {
+  background: linear-gradient(135deg, #1d6fe8 0%, #0284c7 50%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.pulse-dot {
+  animation: pulseDot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes fadeUpAnim {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUpAnim 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fadeInAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInAnim 1s ease-out both;
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

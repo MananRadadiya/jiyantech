@@ -1,0 +1,128 @@
+<section class="py-24 md:py-32 px-6 lg:px-12 bg-white border-b border-slate-200/80" id="services">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div>
+        <p class="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-brand-600 font-mono mb-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+          What We Build
+        </p>
+        <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+          End-to-end capability.<br />
+          <span class="text-brand-500 font-normal">One connected team.</span>
+        </h2>
+        <p class="text-slate-600 text-sm md:text-base leading-relaxed max-w-xl mt-4">
+          From early product thinking to the systems that keep it running, we bring clarity to every layer of the build.
+        </p>
+      </div>
+      <div>
+        <a
+          href="/services"
+          class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700 transition-colors"
+        >
+          <span>View all capabilities</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 border-t border-slate-200">
+      <!-- Services Tab Buttons -->
+      <div class="lg:col-span-6 lg:border-r border-slate-200 divide-y divide-slate-100">
+        <% servicesData.forEach(function(service, index) { %>
+          <button
+            class="service-tab-btn w-full py-5 px-4 sm:px-6 flex items-center justify-between text-left transition-all duration-200 group cursor-pointer <%= index === 0 ? 'bg-brand-50/60 text-slate-900 border-l-4 border-l-brand-500' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50' %>"
+            data-index="<%= index %>"
+            role="tab"
+            aria-selected="<%= index === 0 ? 'true' : 'false' %>"
+          >
+            <div class="flex items-center gap-4">
+              <span class="service-tab-num font-mono text-xs tracking-wider <%= index === 0 ? 'text-brand-500 font-bold' : 'text-slate-400' %>">
+                <%= service.number %>
+              </span>
+              <span class="text-base sm:text-lg font-semibold tracking-tight">
+                <%= service.title %>
+              </span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="service-tab-tag hidden sm:inline-block text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-mono transition-opacity <%= index === 0 ? 'bg-brand-100 text-brand-700 opacity-100' : 'opacity-0 group-hover:opacity-60 bg-slate-100 text-slate-600' %>">
+                <%= service.highlight %>
+              </span>
+              <i
+                data-lucide="arrow-right"
+                class="service-tab-arrow w-4 h-4 transition-transform duration-200 <%= index === 0 ? 'text-brand-500 -rotate-45' : 'text-slate-300 group-hover:text-slate-500' %>"
+              ></i>
+            </div>
+          </button>
+        <% }); %>
+      </div>
+
+      <!-- Service Detailed Preview Panel -->
+      <div class="lg:col-span-6 lg:pl-10 pt-8 lg:pt-0 flex flex-col justify-between">
+        <!-- Visual Header Box -->
+        <div class="relative h-56 rounded-xl overflow-hidden border border-blue-100 bg-gradient-to-br from-blue-50/80 via-white to-blue-100/50 p-6 flex flex-col justify-between shadow-sm">
+          <div class="flex justify-between items-center z-10">
+            <span id="service-preview-code" class="font-mono text-[10px] uppercase tracking-widest text-slate-500">
+              <%= servicesData[0].code %> / CORE SYSTEM
+            </span>
+            <span class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+              ACTIVE MODULE
+            </span>
+          </div>
+
+          <!-- Animated Signals -->
+          <div class="flex items-end gap-3 h-20 self-center w-3/5 -skew-y-6">
+            <span class="flex-1 bg-brand-500 rounded-sm signal-bar h-[40%]"></span>
+            <span class="flex-1 bg-brand-500 rounded-sm signal-bar h-[70%]"></span>
+            <span class="flex-1 bg-brand-500 rounded-sm signal-bar h-[55%]"></span>
+            <span class="flex-1 bg-brand-500 rounded-sm signal-bar h-[90%]"></span>
+            <span class="flex-1 bg-brand-500 rounded-sm signal-bar h-[100%]"></span>
+          </div>
+
+          <span id="service-preview-spec" class="text-[9px] font-mono text-slate-400 z-10">
+            SPEC: <%= servicesData[0].highlight %>
+          </span>
+        </div>
+
+        <!-- Service Copy Details -->
+        <div class="pt-8">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[11px] font-bold uppercase tracking-widest text-brand-600 font-mono">
+              Selected Capability
+            </span>
+            <span id="service-preview-counter" class="text-xs font-mono text-slate-400">
+              <%= servicesData[0].number %> / 0<%= servicesData.length %>
+            </span>
+          </div>
+
+          <h3 id="service-preview-title" class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 mb-3">
+            <%= servicesData[0].title %>
+          </h3>
+          <p id="service-preview-desc" class="text-slate-600 text-sm leading-relaxed mb-6">
+            <%= servicesData[0].description %>
+          </p>
+
+          <div>
+            <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 font-mono mb-2.5">
+              Core Competencies:
+            </span>
+            <div id="service-preview-tags" class="flex flex-wrap gap-2">
+              <% servicesData[0].tags.forEach(function(tag) { %>
+                <span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200/80 px-3 py-1.5 rounded-md">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-brand-500"></i>
+                  <%= tag %>
+                </span>
+              <% }); %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Embedded Service Data for Interactive Tabs -->
+<script id="services-json" type="application/json">
+  <%- JSON.stringify(servicesData) %>
+</script>

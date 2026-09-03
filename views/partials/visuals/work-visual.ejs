@@ -1,0 +1,142 @@
+<div
+  class="hidden lg:block absolute w-[44vw] max-w-[520px] aspect-square right-4 top-1/2 -translate-y-1/2 pointer-events-none select-none"
+  aria-hidden="true"
+>
+  <!-- Ambient glow -->
+  <div
+    class="absolute inset-[12%] rounded-full bg-gradient-to-br from-brand-400/15 via-emerald-300/10 to-transparent blur-3xl animate-pulse"
+    style="animation-duration: 5s;"
+  ></div>
+
+  <!-- Outer rotating rings -->
+  <div class="absolute inset-0 rounded-full border border-slate-200/60 anim-spin-slow"></div>
+  <div class="absolute inset-8 rounded-full border border-dashed border-brand-200/40 anim-spin-reverse-3d"></div>
+
+  <!-- Compass markers -->
+  <div class="absolute inset-0 rounded-full">
+    <div class="absolute left-1/2 top-0 w-1.5 h-1.5 -ml-[3px] rounded-full bg-brand-300" style="transform: rotate(0deg); transform-origin: center 260px;"></div>
+    <div class="absolute left-1/2 top-0 w-1.5 h-1.5 -ml-[3px] rounded-full bg-brand-300" style="transform: rotate(90deg); transform-origin: center 260px;"></div>
+    <div class="absolute left-1/2 top-0 w-1.5 h-1.5 -ml-[3px] rounded-full bg-brand-300" style="transform: rotate(180deg); transform-origin: center 260px;"></div>
+    <div class="absolute left-1/2 top-0 w-1.5 h-1.5 -ml-[3px] rounded-full bg-brand-300" style="transform: rotate(270deg); transform-origin: center 260px;"></div>
+  </div>
+
+  <!-- SVG network mesh -->
+  <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <linearGradient id="linkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#93c5fd" stop-opacity="0.5"></stop>
+        <stop offset="100%" stop-color="#67e8f9" stop-opacity="0.3"></stop>
+      </linearGradient>
+      <linearGradient id="pulseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#2563eb" stop-opacity="0.9"></stop>
+        <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.9"></stop>
+      </linearGradient>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="0.8" result="blur"></feGaussianBlur>
+        <feMerge>
+          <feMergeNode in="blur"></feMergeNode>
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- Static connection lines -->
+    <line x1="50" y1="50" x2="18" y2="28" stroke="url(#linkGrad)" stroke-width="0.4" stroke-dasharray="1.5 1.5"></line>
+    <line x1="50" y1="50" x2="82" y2="28" stroke="url(#linkGrad)" stroke-width="0.4" stroke-dasharray="1.5 1.5"></line>
+    <line x1="50" y1="50" x2="18" y2="72" stroke="url(#linkGrad)" stroke-width="0.4" stroke-dasharray="1.5 1.5"></line>
+    <line x1="50" y1="50" x2="82" y2="72" stroke="url(#linkGrad)" stroke-width="0.4" stroke-dasharray="1.5 1.5"></line>
+    <line x1="50" y1="50" x2="50" y2="15" stroke="url(#linkGrad)" stroke-width="0.4" stroke-dasharray="1.5 1.5"></line>
+    <line x1="18" y1="28" x2="50" y2="15" stroke="url(#linkGrad)" stroke-width="0.4" stroke-dasharray="1.5 1.5"></line>
+    <line x1="82" y1="28" x2="50" y2="15" stroke="url(#linkGrad)" stroke-width="0.4" stroke-dasharray="1.5 1.5"></line>
+    <line x1="18" y1="72" x2="82" y2="72" stroke="url(#linkGrad)" stroke-width="0.4" stroke-dasharray="1.5 1.5"></line>
+
+    <!-- Animated Core Circle -->
+    <circle cx="50" cy="50" r="6" fill="none" stroke="#2563eb" stroke-width="0.3" class="animate-ping" style="transform-origin: 50px 50px; animation-duration: 3s;"></circle>
+    <circle cx="50" cy="50" r="7" fill="#2563eb" opacity="0.12"></circle>
+    <circle cx="50" cy="50" r="5" fill="white" stroke="#2563eb" stroke-width="0.6" class="animate-node-pulse" style="transform-origin: 50px 50px;" filter="url(#glow)"></circle>
+
+    <!-- Outer Node Circles -->
+    <circle cx="18" cy="28" r="4" fill="white" stroke="#0891b2" stroke-width="0.5"></circle>
+    <circle cx="82" cy="28" r="4" fill="white" stroke="#0891b2" stroke-width="0.5"></circle>
+    <circle cx="18" cy="72" r="4" fill="white" stroke="#0891b2" stroke-width="0.5"></circle>
+    <circle cx="82" cy="72" r="4" fill="white" stroke="#0891b2" stroke-width="0.5"></circle>
+    <circle cx="50" cy="15" r="4" fill="white" stroke="#2563eb" stroke-width="0.5"></circle>
+  </svg>
+
+  <!-- HTML Node overlays with Lucide Icons -->
+  <div class="absolute flex flex-col items-center gap-1" style="left: 50%; top: 50%; transform: translate(-50%, -50%);">
+    <div class="w-14 h-14 rounded-full border-2 border-brand-500 bg-white shadow-brand-500/20 ring-4 ring-brand-500/10 flex items-center justify-center">
+      <i data-lucide="network" class="w-6 h-6 text-brand-600"></i>
+    </div>
+    <span class="font-mono font-bold tracking-wider bg-white/90 px-1.5 py-0.5 rounded shadow-xs border border-slate-100 text-[9px] text-brand-700">CORE API</span>
+  </div>
+
+  <div class="absolute flex flex-col items-center gap-1" style="left: 18%; top: 28%; transform: translate(-50%, -50%);">
+    <div class="w-10 h-10 rounded-full border-2 border-cyan-400 bg-white shadow-md flex items-center justify-center">
+      <i data-lucide="database" class="w-4 h-4 text-cyan-600"></i>
+    </div>
+    <span class="font-mono font-bold tracking-wider bg-white/90 px-1.5 py-0.5 rounded shadow-xs border border-slate-100 text-[8px] text-cyan-700">DATABASE</span>
+  </div>
+
+  <div class="absolute flex flex-col items-center gap-1" style="left: 82%; top: 28%; transform: translate(-50%, -50%);">
+    <div class="w-10 h-10 rounded-full border-2 border-cyan-400 bg-white shadow-md flex items-center justify-center">
+      <i data-lucide="layers" class="w-4 h-4 text-cyan-600"></i>
+    </div>
+    <span class="font-mono font-bold tracking-wider bg-white/90 px-1.5 py-0.5 rounded shadow-xs border border-slate-100 text-[8px] text-cyan-700">CACHE</span>
+  </div>
+
+  <div class="absolute flex flex-col items-center gap-1" style="left: 18%; top: 72%; transform: translate(-50%, -50%);">
+    <div class="w-10 h-10 rounded-full border-2 border-cyan-400 bg-white shadow-md flex items-center justify-center">
+      <i data-lucide="cpu" class="w-4 h-4 text-cyan-600"></i>
+    </div>
+    <span class="font-mono font-bold tracking-wider bg-white/90 px-1.5 py-0.5 rounded shadow-xs border border-slate-100 text-[8px] text-cyan-700">COMPUTE</span>
+  </div>
+
+  <div class="absolute flex flex-col items-center gap-1" style="left: 82%; top: 72%; transform: translate(-50%, -50%);">
+    <div class="w-10 h-10 rounded-full border-2 border-cyan-400 bg-white shadow-md flex items-center justify-center">
+      <i data-lucide="cloud" class="w-4 h-4 text-cyan-600"></i>
+    </div>
+    <span class="font-mono font-bold tracking-wider bg-white/90 px-1.5 py-0.5 rounded shadow-xs border border-slate-100 text-[8px] text-cyan-700">CLOUD</span>
+  </div>
+
+  <div class="absolute flex flex-col items-center gap-1" style="left: 50%; top: 15%; transform: translate(-50%, -50%);">
+    <div class="w-10 h-10 rounded-full border-2 border-brand-500 bg-white shadow-md flex items-center justify-center">
+      <i data-lucide="lock" class="w-4 h-4 text-brand-600"></i>
+    </div>
+    <span class="font-mono font-bold tracking-wider bg-white/90 px-1.5 py-0.5 rounded shadow-xs border border-slate-100 text-[8px] text-brand-700">AUTH</span>
+  </div>
+
+  <!-- Floating metric badge — bottom left -->
+  <div
+    class="absolute bottom-4 left-4 px-3 py-2 rounded-xl bg-white/95 border border-brand-200/80 shadow-lg backdrop-blur-md anim-float"
+    style="animation-delay: -2s;"
+  >
+    <div class="flex items-center gap-2">
+      <div class="flex flex-col">
+        <span class="text-[8px] font-mono text-slate-400 uppercase tracking-wider font-medium">Data Rate</span>
+        <span id="metric-data-rate" class="text-sm font-mono font-bold text-brand-700">1.48 GB/s</span>
+      </div>
+      <div class="w-px h-8 bg-slate-200"></div>
+      <div class="flex flex-col">
+        <span class="text-[8px] font-mono text-slate-400 uppercase tracking-wider font-medium">Health</span>
+        <span class="text-sm font-mono font-bold text-emerald-600">99.98%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating node count badge — top right -->
+  <div
+    class="absolute top-4 right-4 px-3 py-2 rounded-xl bg-white/95 border border-emerald-200/80 shadow-lg backdrop-blur-md anim-float"
+    style="animation-delay: -4s;"
+  >
+    <div class="flex items-center gap-2">
+      <div class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+      </div>
+      <span class="text-[10px] font-mono font-bold text-emerald-700">
+        6 NODES · 8 LINKS
+      </span>
+    </div>
+  </div>
+</div>

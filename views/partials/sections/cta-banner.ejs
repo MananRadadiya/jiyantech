@@ -1,0 +1,23 @@
+<section class="py-16 px-6 lg:px-12 bg-white">
+  <div class="max-w-7xl mx-auto p-8 sm:p-12 rounded-2xl bg-gradient-to-r from-blue-900 to-slate-900 text-white flex flex-col md:flex-row justify-between items-start md:items-center gap-8 shadow-xl">
+    <div class="max-w-xl">
+      <p class="text-[10px] uppercase font-mono tracking-widest text-brand-300 font-bold mb-2">
+        <%= typeof subtitle !== 'undefined' ? subtitle : 'Custom Requirements?' %>
+      </p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">
+        <%= typeof title !== 'undefined' ? title : 'Let’s tailor a dedicated squad for your project.' %>
+      </h2>
+      <p class="text-slate-400 text-xs sm:text-sm">
+        <%= typeof desc !== 'undefined' ? desc : 'Whether you need a full team or specialized domain engineers, we can onboard within days.' %>
+      </p>
+    </div>
+
+    <a
+      href="/contact"
+      class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-bold px-6 py-3.5 rounded-md text-xs tracking-tight transition-all duration-200 shadow-brand shrink-0 hover:-translate-y-0.5"
+    >
+      <span><%= typeof buttonText !== 'undefined' ? buttonText : 'Start a Project' %></span>
+      <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+    </a>
+  </div>
+</section>

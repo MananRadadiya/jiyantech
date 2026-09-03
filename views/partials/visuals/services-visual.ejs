@@ -1,0 +1,93 @@
+<div
+  class="hidden lg:block absolute w-[40vw] max-w-[560px] aspect-square right-2 top-1/2 -translate-y-1/2 opacity-95 pointer-events-none select-none"
+  aria-hidden="true"
+>
+  <!-- Ambient background aura -->
+  <div class="absolute inset-[15%] rounded-full bg-brand-500/15 blur-3xl anim-pulse-ring"></div>
+
+  <!-- Main 3D Orbit Ring -->
+  <div class="absolute inset-4 rounded-full border border-brand-500/20 anim-spin-3d"></div>
+  <div class="absolute inset-16 rounded-full border border-dashed border-brand-400/25 anim-spin-reverse-3d"></div>
+
+  <!-- Isometric Floating Service Stacks -->
+  <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 anim-float">
+    <!-- Layer 3: Edge & Client (Top) -->
+    <div class="absolute left-12 top-4 w-40 h-24 -skew-y-12 bg-white/90 border border-brand-300 rounded-lg shadow-md p-3 flex flex-col justify-between backdrop-blur-md">
+      <div class="flex justify-between items-center text-[9px] font-mono font-bold text-brand-600">
+        <span>EDGE / FRONTEND</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+      </div>
+      <div class="grid grid-cols-3 gap-1">
+        <span class="h-1.5 bg-brand-200 rounded"></span>
+        <span class="h-1.5 bg-brand-400 rounded"></span>
+        <span class="h-1.5 bg-brand-100 rounded"></span>
+      </div>
+      <span class="text-[8px] font-mono text-slate-400">SSR / CSR · 60FPS</span>
+    </div>
+
+    <!-- Layer 2: API Gateway & Logic (Middle) -->
+    <div class="absolute left-6 top-20 w-44 h-24 -skew-y-12 bg-blue-50/90 border border-brand-400 rounded-lg shadow-lg p-3 flex flex-col justify-between backdrop-blur-md">
+      <div class="flex justify-between items-center text-[9px] font-mono font-bold text-brand-700">
+        <span>MICROSERVICES / RPC</span>
+        <span class="text-[8px] text-brand-500 font-mono">12ms</span>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span class="w-2.5 h-2.5 rounded bg-brand-500 flex items-center justify-center text-[6px] text-white font-mono font-bold">A</span>
+        <span class="w-2.5 h-2.5 rounded bg-brand-600 flex items-center justify-center text-[6px] text-white font-mono font-bold">B</span>
+        <span class="w-2.5 h-2.5 rounded bg-brand-700 flex items-center justify-center text-[6px] text-white font-mono font-bold">C</span>
+        <span class="flex-1 h-[1px] bg-brand-300"></span>
+      </div>
+      <span class="text-[8px] font-mono text-slate-500">AUTH · DATA · STREAM</span>
+    </div>
+
+    <!-- Layer 1: Distributed Storage & Cloud (Bottom) -->
+    <div class="absolute left-0 top-36 w-48 h-24 -skew-y-12 bg-slate-900/90 border border-slate-700 rounded-lg shadow-xl p-3 flex flex-col justify-between text-white backdrop-blur-md">
+      <div class="flex justify-between items-center text-[9px] font-mono font-bold text-brand-300">
+        <span>CLOUD / CLUSTER</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+      </div>
+      <div class="flex justify-between text-[8px] font-mono text-slate-400">
+        <span>REPLICAS: 03</span>
+        <span>SHARDS: 12</span>
+        <span>UPTIME: 99.99%</span>
+      </div>
+      <div class="w-full bg-slate-800 h-1.5 rounded overflow-hidden">
+        <div class="bg-brand-400 h-full w-4/5 rounded"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SVG Circuit Lines with animated dashed data packets -->
+  <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 400">
+    <path
+      d="M 60 120 C 120 80, 280 90, 340 140"
+      fill="none"
+      stroke="#3b82f6"
+      strokeWidth="1.5"
+      class="anim-dash-flow opacity-60"
+    ></path>
+    <path
+      d="M 40 260 C 100 320, 260 340, 360 270"
+      fill="none"
+      stroke="#3b82f6"
+      strokeWidth="1.5"
+      class="anim-dash-flow opacity-60"
+    ></path>
+  </svg>
+
+  <!-- Satellite Telemetry Badges -->
+  <div class="absolute top-[18%] right-[10%] px-2.5 py-1 rounded-full bg-white/90 border border-brand-200 shadow-sm text-[9px] font-mono text-brand-600 flex items-center gap-1.5 backdrop-blur-sm">
+    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+    <span>SYS.STATUS: HEALTHY</span>
+  </div>
+
+  <div class="absolute bottom-[20%] left-[8%] px-2.5 py-1 rounded-full bg-white/90 border border-slate-200 shadow-sm text-[9px] font-mono text-slate-600 flex items-center gap-1.5 backdrop-blur-sm">
+    <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+    <span>THROUGHPUT: 45K TPS</span>
+  </div>
+
+  <!-- Corner coordinates -->
+  <span class="absolute top-4 left-6 text-[8px] font-mono text-slate-400 tracking-widest">
+    SRV // CAPABILITIES_V3
+  </span>
+</div>

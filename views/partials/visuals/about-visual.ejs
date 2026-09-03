@@ -1,0 +1,127 @@
+<div
+  class="hidden lg:block absolute w-[44vw] max-w-[620px] aspect-square right-2 top-1/2 -translate-y-1/2 opacity-95 pointer-events-none select-none"
+  aria-hidden="true"
+>
+  <!-- Breathing ambient core glow -->
+  <div class="absolute inset-[18%] rounded-full bg-brand-500/12 blur-3xl animate-breathe"></div>
+
+  <!-- Rotating outer guide ring (dashed) -->
+  <div class="absolute inset-2 rounded-full border border-dashed border-brand-500/15 animate-core-rotate"></div>
+
+  <!-- Rotating inner guide ring (dashed, reverse) -->
+  <div class="absolute inset-10 rounded-full border border-dashed border-cyan-400/15 animate-core-rotate-rev"></div>
+
+  <!-- Vertical scan line sweeping across -->
+  <div class="absolute inset-x-4 h-px bg-gradient-to-r from-transparent via-brand-500/40 to-transparent animate-scan-line"></div>
+
+  <!-- SVG Neural Network -->
+  <svg
+    class="absolute inset-0 w-full h-full"
+    viewBox="0 0 400 400"
+    fill="none"
+    preserveAspectRatio="xMidYMid meet"
+  >
+    <defs>
+      <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.6"></stop>
+        <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.3"></stop>
+      </linearGradient>
+      <linearGradient id="lineGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#3b82f6" stop-opacity="0"></stop>
+        <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.8"></stop>
+        <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"></stop>
+      </linearGradient>
+      <linearGradient id="lineGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#06b6d4" stop-opacity="0"></stop>
+        <stop offset="50%" stop-color="#06b6d4" stop-opacity="0.8"></stop>
+        <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"></stop>
+      </linearGradient>
+      <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.4"></stop>
+        <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"></stop>
+      </radialGradient>
+      <radialGradient id="nodeGlowCyan" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4"></stop>
+        <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"></stop>
+      </radialGradient>
+    </defs>
+
+    <!-- Static connection network lines -->
+    <g stroke-width="1" opacity="0.35">
+      <line x1="200" y1="200" x2="100" y2="80" stroke="#3b82f6"></line>
+      <line x1="200" y1="200" x2="320" y2="110" stroke="#3b82f6"></line>
+      <line x1="200" y1="200" x2="340" y2="260" stroke="#06b6d4"></line>
+      <line x1="200" y1="200" x2="80" y2="280" stroke="#3b82f6"></line>
+      <line x1="200" y1="200" x2="200" y2="60" stroke="#06b6d4"></line>
+      <line x1="200" y1="200" x2="200" y2="340" stroke="#3b82f6"></line>
+      <line x1="100" y1="80" x2="200" y2="60" stroke="#3b82f6"></line>
+      <line x1="200" y1="60" x2="320" y2="110" stroke="#06b6d4"></line>
+      <line x1="320" y1="110" x2="340" y2="260" stroke="#3b82f6"></line>
+      <line x1="340" y1="260" x2="200" y2="340" stroke="#06b6d4"></line>
+      <line x1="200" y1="340" x2="80" y2="280" stroke="#3b82f6"></line>
+      <line x1="80" y1="280" x2="100" y2="80" stroke="#06b6d4"></line>
+      <line x1="100" y1="80" x2="320" y2="110" stroke="#3b82f6" stroke-dasharray="3 4" opacity="0.5"></line>
+      <line x1="80" y1="280" x2="340" y2="260" stroke="#06b6d4" stroke-dasharray="3 4" opacity="0.5"></line>
+    </g>
+
+    <!-- Animated traveling light pulses along key connections -->
+    <circle r="3" fill="#3b82f6">
+      <animateMotion dur="4s" repeatCount="indefinite" path="M200,200 L100,80"></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" dur="4s" repeatCount="indefinite"></animate>
+    </circle>
+    <circle r="3" fill="#3b82f6">
+      <animateMotion dur="5s" begin="1.5s" repeatCount="indefinite" path="M200,200 L320,110"></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" dur="5s" begin="1.5s" repeatCount="indefinite"></animate>
+    </circle>
+    <circle r="3" fill="#06b6d4">
+      <animateMotion dur="6s" begin="0.5s" repeatCount="indefinite" path="M200,200 L340,260"></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" dur="6s" begin="0.5s" repeatCount="indefinite"></animate>
+    </circle>
+    <circle r="3" fill="#3b82f6">
+      <animateMotion dur="4.5s" begin="2s" repeatCount="indefinite" path="M200,200 L80,280"></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" dur="4.5s" begin="2s" repeatCount="indefinite"></animate>
+    </circle>
+
+    <!-- Outer ring nodes with glow halos -->
+    <circle cx="100" cy="80" r="14" fill="url(#nodeGlow)"></circle>
+    <circle cx="320" cy="110" r="14" fill="url(#nodeGlow)"></circle>
+    <circle cx="340" cy="260" r="14" fill="url(#nodeGlowCyan)"></circle>
+    <circle cx="80" cy="280" r="14" fill="url(#nodeGlow)"></circle>
+    <circle cx="200" cy="60" r="12" fill="url(#nodeGlowCyan)"></circle>
+    <circle cx="200" cy="340" r="12" fill="url(#nodeGlow)"></circle>
+
+    <!-- Node dots -->
+    <circle cx="100" cy="80" r="4" fill="#3b82f6" class="animate-node-pulse"></circle>
+    <circle cx="320" cy="110" r="4" fill="#3b82f6" class="animate-node-pulse-delay"></circle>
+    <circle cx="340" cy="260" r="4" fill="#06b6d4" class="animate-node-pulse-delay-2"></circle>
+    <circle cx="80" cy="280" r="4" fill="#3b82f6" class="animate-node-pulse-delay"></circle>
+    <circle cx="200" cy="60" r="3.5" fill="#06b6d4" class="animate-node-pulse"></circle>
+    <circle cx="200" cy="340" r="3.5" fill="#3b82f6" class="animate-node-pulse-delay-2"></circle>
+
+    <!-- Center hub node -->
+    <circle cx="200" cy="200" r="20" fill="url(#nodeGlow)"></circle>
+    <circle cx="200" cy="200" r="6" fill="#3b82f6" class="animate-node-pulse"></circle>
+  </svg>
+
+  <!-- Central morphing geometric core -->
+  <div class="absolute left-1/2 top-1/2 w-[22%] aspect-square -translate-x-1/2 -translate-y-1/2 animate-morph-core bg-gradient-to-br from-blue-50/80 via-white/85 to-blue-100/70 border border-brand-500/40 shadow-[0_0_45px_rgba(29,111,232,0.18)] backdrop-blur-md flex items-center justify-center">
+    <div class="w-[50%] h-[50%] rounded-lg bg-gradient-to-br from-brand-500 to-blue-600 shadow-brand animate-breathe"></div>
+  </div>
+
+  <!-- Drifting constellation city nodes -->
+  <div class="absolute top-[17%] left-[54%] w-2 h-2 bg-brand-500 rounded-full ring-4 ring-brand-500/15 shadow-[0_0_20px_rgba(29,111,232,0.7)] animate-drift-1"></div>
+  <div class="absolute top-[69%] left-[78%] w-2 h-2 bg-cyan-500 rounded-full ring-4 ring-cyan-500/15 shadow-[0_0_20px_rgba(6,182,212,0.7)] animate-drift-2"></div>
+  <div class="absolute top-[76%] left-[26%] w-2 h-2 bg-brand-500 rounded-full ring-4 ring-brand-500/15 shadow-[0_0_20px_rgba(29,111,232,0.7)] animate-drift-3"></div>
+  <div class="absolute top-[32%] left-[14%] w-2 h-2 bg-blue-600 rounded-full ring-4 ring-blue-500/15 shadow-[0_0_20px_rgba(29,111,232,0.7)] animate-drift-4"></div>
+
+  <!-- Telemetry labels -->
+  <span class="absolute top-[24%] left-[58%] text-[8px] font-mono tracking-widest text-slate-400 uppercase">
+    hyderabad [hq] · worldwide
+  </span>
+  <span class="absolute top-[65%] left-[66%] text-[8px] font-mono tracking-widest text-slate-400 uppercase">
+    network online · 50+
+  </span>
+  <span class="absolute top-[80%] left-[16%] text-[8px] font-mono tracking-widest text-slate-400 uppercase">
+    satisfaction // 98%
+  </span>
+</div>

@@ -1,0 +1,147 @@
+<%- include('partials/head', { title: 'Our Approach & Engineering Principles' }) %>
+<%- include('partials/navbar') %>
+
+<main class="flex-1 pt-24 pb-20">
+  <!-- Hero with 3D ApproachVisual -->
+  <section class="relative py-16 md:py-24 px-6 lg:px-12 bg-gradient-to-b from-slate-50 via-white to-white border-b border-slate-200/80 overflow-hidden">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="mb-8">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 hover:text-brand-500 transition-colors"
+        >
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          <span>Back to Overview</span>
+        </a>
+      </div>
+
+      <div class="max-w-2xl">
+        <p class="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-brand-500 mb-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-500 ring-4 ring-brand-500/15"></span>
+          Our Approach
+        </p>
+        <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
+          Disciplined systems built on<br />
+          <span class="text-brand-500 font-normal">clarity and momentum.</span>
+        </h1>
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl">
+          We reject brittle shortcuts and bloated abstractions. We craft dependable software architectures that empower your business to move with confidence.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3D Visual on right -->
+    <%- include('partials/visuals/approach-visual') %>
+  </section>
+
+  <!-- Principles Detail Grid -->
+  <section class="py-20 px-6 lg:px-12 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <% principlesData.forEach(function(item) { %>
+        <div
+          class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all duration-200 flex flex-col justify-between"
+        >
+          <div>
+            <div class="flex justify-between items-center mb-6">
+              <span class="font-mono text-3xl font-extrabold text-brand-500">
+                <%= item.number %>
+              </span>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500 font-mono bg-white px-2 py-1 rounded border border-slate-200">
+                <%= item.detail %>
+              </span>
+            </div>
+
+            <h2 class="text-xl font-bold text-slate-900 mb-3"><%= item.title %></h2>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              <%= item.description %>
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-200/80 flex flex-col gap-2">
+            <div class="flex items-center gap-2 text-xs text-slate-600">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-brand-500 shrink-0"></i>
+              <span>Validated root architecture</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-slate-600">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-brand-500 shrink-0"></i>
+              <span>Business outcome alignment</span>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </section>
+
+  <!-- Quality Standards -->
+  <section class="py-20 px-6 lg:px-12 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-14">
+        <p class="text-[11px] font-bold uppercase tracking-widest text-brand-600 font-mono mb-2">
+          Quality Gates
+        </p>
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900 mb-3">
+          Engineering standards that never waver.
+        </h2>
+        <p class="text-slate-500 text-sm max-w-xl">
+          We maintain rigorous quality controls across all stages of development to ensure security, maintainability, and peak performance.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
+          <div class="flex justify-between items-center mb-4">
+            <span class="font-mono text-xs font-bold text-brand-500">01</span>
+            <i data-lucide="shield" class="w-4 h-4 text-slate-400"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">Type Safety & Strict Linting</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            Zero tolerance for implicit any or untested corner cases. Every interface contract is strictly defined.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
+          <div class="flex justify-between items-center mb-4">
+            <span class="font-mono text-xs font-bold text-brand-500">02</span>
+            <i data-lucide="shield" class="w-4 h-4 text-slate-400"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">Modular & Decoupled Design</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            Components and microservices are built independently to prevent monolithic bottlenecks.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
+          <div class="flex justify-between items-center mb-4">
+            <span class="font-mono text-xs font-bold text-brand-500">03</span>
+            <i data-lucide="shield" class="w-4 h-4 text-slate-400"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">Automated CI/CD Pipelines</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            Continuous linting, automated test suites, and staging branch previews on every pull request.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
+          <div class="flex justify-between items-center mb-4">
+            <span class="font-mono text-xs font-bold text-brand-500">04</span>
+            <i data-lucide="shield" class="w-4 h-4 text-slate-400"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">Observability & Sub-50ms Benchmarks</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            Proactive error tracking, latency telemetry, and query optimization built-in from day one.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reusable Call to Action Banner -->
+  <%- include('partials/sections/cta-banner', {
+    subtitle: 'How We Partner',
+    title: 'Transparent, asynchronous, and deeply embedded.',
+    desc: 'Direct access to engineers and designers via shared Slack channels, daily async recaps, and weekly demos.',
+    buttonText: 'Start a Project'
+  }) %>
+</main>
+
+<%- include('partials/footer') %>
